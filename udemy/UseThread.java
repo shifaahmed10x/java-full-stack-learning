@@ -1,13 +1,12 @@
-package udemy;
-class Counter
-{
-	int count;
-//	public void increment()
-	public synchronized void increment()
-	{
-		count++;
-	}
+
+class Counter {
+    int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
 }
+
 
 public class UseThread {
  public static void main(String[] args) throws InterruptedException{   
