@@ -1,4 +1,3 @@
-package quiz_game;
 
 public class Question {
     private int id;

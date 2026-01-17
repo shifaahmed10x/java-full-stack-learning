@@ -1,6 +1,7 @@
 package udemy;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -23,6 +24,9 @@ public class CollectionFramee {
     num.add(34);
     num.add(34);
 
+    List<Integer> nums = Arrays.asList(4,5,6,7);
+    nums.forEach(n-> System.out.println(n));    System.out.println(num);
+/*
     for (int object : num) {
         System.out.println(object);
     }
@@ -65,7 +69,7 @@ for(String name : stuMap.keySet()){
     System.out.println(name+": "+stuMap.get(name));
 }
 //HASHTABLE
-
+ */
 }
    }
    

@@ -1,4 +1,4 @@
-package quiz_game;
+
 
 import java.util.Scanner;
 
