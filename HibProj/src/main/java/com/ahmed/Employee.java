@@ -1,15 +1,23 @@
 package com.ahmed;
 
-import jakarta.persistence.Entity; //JPA
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.Entity;
+import  jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+
+
+import java.util.List;
 
 @Entity
+//@Table(name = "employee_demo")
 public class Employee {
     @Id
     private int emp_id;
+   // @Column(name="emp_name")
     private String name;
+    //@Transient
     private int age;
+    @ManyToMany
+    private List<Laptop> laptops;
 
     public int getEmp_id() {
         return emp_id;
@@ -35,12 +43,21 @@ public class Employee {
         this.age = age;
     }
 
+    public List<Laptop> getLaptops() {
+        return laptops;
+    }
+
+    public void setLaptops(List<Laptop> laptops) {
+        this.laptops = laptops;
+    }
+
     @Override
     public String toString() {
         return "Employee{" +
                 "emp_id=" + emp_id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", laptop=" + laptops +
                 '}';
     }
 }
