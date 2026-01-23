@@ -2,7 +2,7 @@ package com.ahmed;
 
 import jakarta.persistence.Entity;
 import  jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class Employee {
     private String name;
     //@Transient
     private int age;
-    @ManyToMany
+    @OneToMany
     private List<Laptop> laptops;
 
     public int getEmp_id() {

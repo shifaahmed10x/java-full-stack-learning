@@ -39,18 +39,8 @@ public class Main {
         ep2.setName("Alex");
         ep2.setAge(67);
 
-        Employee ep3 = new Employee();
-        ep3.setEmp_id(14);
-        ep3.setName("Koki");
-        ep3.setAge(23);
-
         ep1.setLaptops(Arrays.asList(l1,l2));
-        ep2.setLaptops(Arrays.asList(l2,l3));
-        ep3.setLaptops(Arrays.asList(l1));
-
-        l1.setEmployee(Arrays.asList(ep1,ep3));
-        l2.setEmployee(Arrays.asList(ep1,ep2));
-        l3.setEmployee(Arrays.asList(ep2));
+        ep2.setLaptops(Arrays.asList(l3));
 
 
 //        Employee ep2=null;
@@ -67,7 +57,6 @@ public class Main {
 //    Transcation is used when you manipulate the database ,not for fetching
         Transaction transaction = session.beginTransaction();
         session.persist(ep1);
-        session.persist(ep3);
         session.persist(ep2);
         session.persist(l1);
         session.persist(l2);

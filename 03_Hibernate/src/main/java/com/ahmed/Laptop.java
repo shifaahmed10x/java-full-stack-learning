@@ -13,8 +13,7 @@ public class Laptop {
     private String brand;
     private  String model;
     private int ram;
-    @ManyToMany(mappedBy = "laptops")
-    private List<Employee> employee;
+
 
     @Override
     public String toString() {
@@ -27,13 +26,7 @@ public class Laptop {
     }
 
 
-    public List<Employee> getEmployee() {
-        return employee;
-    }
 
-    public void setEmployee(List<Employee> employee) {
-        this.employee = employee;
-    }
 
     public String getBrand() {
         return brand;
