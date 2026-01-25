@@ -44,7 +44,7 @@ public class Main {
 
 
 //        Employee ep2=null;
-//
+
         SessionFactory sf = new Configuration()
                 .addAnnotatedClass(com.ahmed.Employee.class)
                 .addAnnotatedClass(com.ahmed.Laptop.class)
@@ -63,25 +63,25 @@ public class Main {
         session.persist(l3);
         transaction.commit();
 
-// //USED TO FETCH DATA
-//        // fetching values
-//        //ep2=session.get(Employee.class,1);
+// USED TO FETCH DATA
+//         fetching values
+//        ep2=session.get(Employee.class,1);
         Employee ep4 = session.find(Employee.class,12);
         System.out.println(ep4);
 //
-// //used to update
-// //        Transaction transaction = session.beginTransaction();
-//  //        session.merge(ep1); // update data ,if new then add
-//  //        transaction.commit()
+// used to update
+//        Transaction transaction = session.beginTransaction();
+//          session.merge(ep1); // update data ,if new then add
+//          transaction.commit()
 //
-// // used to delete record
-// ep2 = session.find(Employee.class,3);
-// Transaction transaction = session.beginTransaction();
-// session.remove(ep2);
-// transaction.commit();
+//  used to delete record
+//  ep2 = session.find(Employee.class,3);
+//  Transaction transaction = session.beginTransaction();
+//  session.remove(ep2);
+//  transaction.commit();
         session.close();
         sf.close();
-//
+
 //        System.out.println(ep1);
     }
 }
