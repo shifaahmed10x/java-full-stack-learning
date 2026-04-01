@@ -8,11 +8,17 @@ public class App
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml"); // create a container + object
         Alien obj1 = (Alien) context.getBean("alien");
-        System.out.println(obj1.age);
-        obj1.age=21;
-        obj1.code();
+        Laptop laptop = (Laptop) context.getBean("lap2");
 
-        Alien obj2=(Alien) context.getBean("alien");
-        System.out.println(obj2.age);
+//       obj1.setAge(24);
+
+        System.out.println("Age :" +obj1.getAge());
+        System.out.println("Roll:" + obj1.getRoll());
+        System.out.println(obj1.getLap().getGen());
+        obj1.code();
+//
+//        Alien obj2=(Alien) context.getBean("alien");
+//        System.out.println(obj2.getAge());
+//        obj2.code();
     }
 }
