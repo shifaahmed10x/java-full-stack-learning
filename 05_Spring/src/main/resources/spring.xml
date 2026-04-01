@@ -5,9 +5,11 @@
 
     <!--<bean id="alien" class="com.ahmed.Alien" scope="prototype">-->
     <bean id="alien" class="com.ahmed.Alien">
+
 <!--        setter injection-->
-        <!-- <property name="age" value="21"></property> &lt;!&ndash; in setter injection , value property is for primitive data&ndash;&gt;-->
-        <!--<property name="lap" ref="lap1"></property>&lt;!&ndash; in setter injection , ref property is for non-primitive data ie obj . to refer an object of other class&ndash;&gt;-->
+         <property name="age" value="21"></property> <!-- in setter injection , value property is for primitive data-->
+        <property name="roll" value="31002"></property>
+        <property name="com" ref="lap1"></property><!-- in setter injection , ref property is for non-primitive data ie obj . to refer an object of other class-->
 
 <!--            constructer injection-->
 <!--        using index -->
@@ -16,16 +18,26 @@
 <!--        <constructor-arg  index="2" type="int" value="311"/>-->
 
 <!--        using name -->
-        <constructor-arg name="age" value="20"/>
-        <constructor-arg name ="roll"  value="311"/>
-        <constructor-arg name="lap" ref="lap2"/>
+<!--        <constructor-arg name="age" value="20"/>-->
+<!--        <constructor-arg name ="roll"  value="311"/>-->
+<!--        <constructor-arg name="lap" ref="lap2"/>-->
 
     </bean>
+
+<bean id ="alien2" class="com.ahmed.Alien">
+    <property name="age" value="78"></property>
+    <property name="roll" value="311004"></property>
+    <property name="com" ref="desk1"></property>
+
+</bean>
 
     <bean id="lap1" class="com.ahmed.Laptop">
     </bean>
 
-    <bean id="lap2" class="com.ahmed.Laptop">
-    <property name="gen" value="4"></property>
+    <bean id="desk1" class="com.ahmed.Desktop">
     </bean>
+
+<!--    <bean id="lap2" class="com.ahmed.Laptop">-->
+<!--    <property name="gen" value="4"></property>-->
+<!--    </bean>-->
 </beans>
