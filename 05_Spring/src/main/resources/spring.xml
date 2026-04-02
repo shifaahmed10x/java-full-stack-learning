@@ -1,43 +1,50 @@
-<!-- configuring bean-->
 <beans xmlns="http://www.springframework.org/schema/beans"
-     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-     xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--<bean id="alien" class="com.ahmed.Alien" scope="prototype">-->
+    <!-- 🔹 Laptop Bean -->
+    <bean id="laptop" class="com.ahmed.Laptop">
+        <property name="gen" value="4"/>
+    </bean>
+
+    <!-- 🔹 Desktop Bean -->
+    <bean id="desktop" class="com.ahmed.Desktop"/>
+<!--///////////////////////////////////////////////-->
+    <!-- 🔹 Autowiring Example -->
+
+    <bean id="alienAuto" class="com.ahmed.Alien" autowire="byName">
+        <property name="age" value="30"/>
+        <property name="roll" value="200"/>
+<!--        <property name="com" ref="com"/>-->
+    </bean>
+
+    <!--    for laptop -->
+    <bean id="com" class="com.ahmed.Laptop"/>
+    <!--    for desktop -->
+    <bean id="com1" class="com.ahmed.Desktop"/>
+
+<!-- //////////////////////////////////////////////////-->
+    <!-- 🔹 Setter Injection -->
     <bean id="alien" class="com.ahmed.Alien">
-
-<!--        setter injection-->
-         <property name="age" value="21"></property> <!-- in setter injection , value property is for primitive data-->
-        <property name="roll" value="31002"></property>
-        <property name="com" ref="lap1"></property><!-- in setter injection , ref property is for non-primitive data ie obj . to refer an object of other class-->
-
-<!--            constructer injection-->
-<!--        using index -->
-<!--        <constructor-arg   index="0" type="int" value="20"/>-->
-<!--        <constructor-arg  index="1" type="com.ahmed.Laptop" ref="lap2"/>-->
-<!--        <constructor-arg  index="2" type="int" value="311"/>-->
-
-<!--        using name -->
-<!--        <constructor-arg name="age" value="20"/>-->
-<!--        <constructor-arg name ="roll"  value="311"/>-->
-<!--        <constructor-arg name="lap" ref="lap2"/>-->
-
+        <property name="age" value="21"/>
+        <property name="roll" value="101"/>
+        <property name="com" ref="laptop"/>
     </bean>
 
-<bean id ="alien2" class="com.ahmed.Alien">
-    <property name="age" value="78"></property>
-    <property name="roll" value="311004"></property>
-    <property name="com" ref="desk1"></property>
-
-</bean>
-
-    <bean id="lap1" class="com.ahmed.Laptop">
+    <!-- 🔹 Interface Example -->
+    <bean id="alien2" class="com.ahmed.Alien">
+        <property name="age" value="22"/>
+        <property name="roll" value="102"/>
+        <property name="com" ref="desktop"/>
     </bean>
 
-    <bean id="desk1" class="com.ahmed.Desktop">
-    </bean>
+    <!-- 🔹 Constructor Injection (COMMENTED FOR PRACTICE) -->
 
-<!--    <bean id="lap2" class="com.ahmed.Laptop">-->
-<!--    <property name="gen" value="4"></property>-->
-<!--    </bean>-->
+            <!--    <bean id="alien3" class="com.ahmed.Alien">-->
+            <!--        <constructor-arg value="25"/>-->
+            <!--        <constructor-arg ref="laptop"/>-->
+            <!--        <constructor-arg value="103"/>-->
+            <!--    </bean>-->
+
 </beans>

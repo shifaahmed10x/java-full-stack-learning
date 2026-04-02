@@ -1,12 +1,18 @@
 package com.ahmed;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.beans.ConstructorProperties;
 
 public class Alien {
+
     private int age;
     private int roll;
+
+    //Autowiring
     private Computer com;
 
+    // 🔹 Getter Methods
     public int getAge() {
         return age;
     }
@@ -19,41 +25,51 @@ public class Alien {
         return com;
     }
 
-    public void setCom(Computer com) {
-        this.com = com;
+    // 🔹 Setter Injection
+    public void setAge(int age) {
+        this.age = age;
     }
 
     public void setRoll(int roll) {
         this.roll = roll;
     }
 
-    public void setAge(int age)
-    {
-        this.age = age;
+    public void setCom(Computer com) {
+        this.com = com;
     }
 
-//    public Laptop getLap() {
-//        return lap;
-//    }
-//
-//    public void setLap(Laptop lap) {
-//        this.com= lap;
-//    }
-//
-//    public  Alien(){
-//        System.out.println("object created");
-//    }
-
-//    use Annotation when using name property in xml
-//    @ConstructorProperties({"age","lap","roll"})
-//    public Alien(int age, Computer com,int roll) {
-//        this.age = age;
-//        this.lap = lap;
-//        this.roll=roll;
-//    }
-
-    public void code(){
+    public void code() {
         System.out.println("coding..");
         com.compile();
     }
+
+    // 🔹 Constructor Injection
+/*
+    // Default constructor
+    public Alien() {
+        System.out.println("Object created");
+    }
+
+    // Use when working with constructor injection in XML
+    // @ConstructorProperties({"age","com","roll"})
+    // public Alien(int age, Computer com, int roll) {
+    //     this.age = age;
+    //     this.com = com;
+    //     this.roll = roll;
+    // }
+*/
+    // 🔹 OLD Laptop-based Code (for learning reference)
+    /*
+    private Laptop lap;
+
+    public Laptop getLap() {
+        return lap;
+    }
+
+    public void setLap(Laptop lap) {
+        this.com = lap;
+    }
+    */
+
+
 }
