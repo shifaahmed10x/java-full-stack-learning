@@ -44,12 +44,12 @@ public class Alien {
     }
 
     // 🔹 Constructor Injection
-/*
+
     // Default constructor
     public Alien() {
         System.out.println("Object created");
     }
-
+/*
     // Use when working with constructor injection in XML
     // @ConstructorProperties({"age","com","roll"})
     // public Alien(int age, Computer com, int roll) {

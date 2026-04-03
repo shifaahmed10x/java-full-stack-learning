@@ -3,48 +3,59 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        https://www.springframework.org/schema/beans/spring-beans.xsd">
 
+<!--    Lazy Int Bean-->
+    <bean id="alienLazy" class="com.ahmed.Alien">
+        <property name="age" value="30"/>
+        <property name="roll" value="31002"/>
+        <property name="com" ref="com_lap"/>
+    </bean>
+
+    <bean id="com_lap" class="com.ahmed.Laptop" primary="true"/>
+    <bean id="com_desk" class="com.ahmed.Desktop" lazy-init="true"/>
+    
+    
     <!-- 🔹 Laptop Bean -->
-    <bean id="laptop" class="com.ahmed.Laptop">
+    <bean id="laptop" class="com.ahmed.Laptop" >
         <property name="gen" value="4"/>
     </bean>
 
     <!-- 🔹 Desktop Bean -->
-    <bean id="desktop" class="com.ahmed.Desktop"/>
+    <bean id="desktop" class="com.ahmed.Desktop" />
 <!--///////////////////////////////////////////////-->
     <!-- 🔹 Autowiring Example -->
 
-    <bean id="alienAuto" class="com.ahmed.Alien" autowire="byName">
-        <property name="age" value="30"/>
-        <property name="roll" value="200"/>
-<!--        <property name="com" ref="com"/>-->
-    </bean>
+<!--    <bean id="alienAuto" class="com.ahmed.Alien" autowire="byType">-->
+<!--        <property name="age" value="30"/>-->
+<!--        <property name="roll" value="200"/>-->
+<!--&lt;!&ndash;        <property name="com" ref="com1"/>&ndash;&gt;-->
+<!--    </bean>-->
 
-    <!--    for laptop -->
-    <bean id="com" class="com.ahmed.Laptop"/>
-    <!--    for desktop -->
-    <bean id="com1" class="com.ahmed.Desktop"/>
+<!--    &lt;!&ndash;    for laptop &ndash;&gt;-->
+<!--    <bean id="com1" class="com.ahmed.Laptop" primary="true"/>-->
+<!--    &lt;!&ndash;    for desktop &ndash;&gt;-->
+<!--    <bean id="com2" class="com.ahmed.Desktop"/>-->
 
 <!-- //////////////////////////////////////////////////-->
     <!-- 🔹 Setter Injection -->
-    <bean id="alien" class="com.ahmed.Alien">
+    <bean id="alien" class="com.ahmed.Alien" >
         <property name="age" value="21"/>
         <property name="roll" value="101"/>
         <property name="com" ref="laptop"/>
     </bean>
 
     <!-- 🔹 Interface Example -->
-    <bean id="alien2" class="com.ahmed.Alien">
-        <property name="age" value="22"/>
-        <property name="roll" value="102"/>
-        <property name="com" ref="desktop"/>
-    </bean>
+<!--    <bean id="alien2" class="com.ahmed.Alien" >-->
+<!--        <property name="age" value="22"/>-->
+<!--        <property name="roll" value="102"/>-->
+<!--        <property name="com" ref="desktop"/>-->
+<!--    </bean>-->
 
     <!-- 🔹 Constructor Injection (COMMENTED FOR PRACTICE) -->
 
-            <!--    <bean id="alien3" class="com.ahmed.Alien">-->
-            <!--        <constructor-arg value="25"/>-->
-            <!--        <constructor-arg ref="laptop"/>-->
-            <!--        <constructor-arg value="103"/>-->
-            <!--    </bean>-->
+<!--                <bean id="alien3" class="com.ahmed.Alien">-->
+<!--                    <constructor-arg value="25"/>-->
+<!--                    <constructor-arg ref="laptop"/>-->
+<!--                    <constructor-arg value="103"/>-->
+<!--                </bean>-->
 
 </beans>

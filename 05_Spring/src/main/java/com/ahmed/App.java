@@ -44,12 +44,21 @@ public class App {
         // =========================
         // 🔹 Autowiring Example
         // =========================
-        System.out.println("\n=== Using Autowiring ===");
+//        System.out.println("\n=== Using Autowiring ===");
+//
+//        Alien obj3 = (Alien) context.getBean("alienAuto");
+//        System.out.println("Age: " + obj3.getAge());
+//        System.out.println("Roll: " + obj3.getRoll());
+//        obj3.code();
 
-        Alien obj3 = (Alien) context.getBean("alienAuto");
-        System.out.println("Age: " + obj3.getAge());
-        System.out.println("Roll: " + obj3.getRoll());
-        obj3.code();
+        // =========================
+        // 🔹 Lazy Init Bean Example
+        // =========================
+
+        Alien obj4 = (Alien) context.getBean("alienLazy");
+        System.out.println("Age: " + obj4.getAge());
+        System.out.println("Roll: " + obj4.getRoll());
+        obj4.code();
 
 
     }
