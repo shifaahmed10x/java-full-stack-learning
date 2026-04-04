@@ -15,7 +15,7 @@ public class App {
         // =========================
 //        System.out.println("=== Using Laptop ===");
 //
-//        Alien obj1 = (Alien) context.getBean("alien");
+//        Alien obj1 = context.getBean("alien",Alien.class);
 //
 //        System.out.println("Age: " + obj1.getAge());
 //        System.out.println("Roll: " + obj1.getRoll());
@@ -55,10 +55,13 @@ public class App {
         // 🔹 Lazy Init Bean Example
         // =========================
 
-        Alien obj4 = (Alien) context.getBean("alienLazy");
+        Alien obj4 =context.getBean("alienLazy",Alien.class); //GetBean By type
         System.out.println("Age: " + obj4.getAge());
         System.out.println("Roll: " + obj4.getRoll());
         obj4.code();
+
+
+
 
 
     }

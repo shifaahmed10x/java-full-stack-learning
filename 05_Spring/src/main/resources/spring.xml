@@ -58,4 +58,15 @@
 <!--                    <constructor-arg value="103"/>-->
 <!--                </bean>-->
 
+        <!--    Inner Beans-->
+    <bean id="alien_inner" class="com.ahmed.Alien" >
+        <property name="age" value="21"/>
+        <property name="roll" value="101"/>
+        <property name="com">
+            <bean id="laptop_inner" class="com.ahmed.Laptop" >
+                <property name="gen" value="4"/>
+            </bean>
+        </property>
+    </bean>
+
 </beans>
