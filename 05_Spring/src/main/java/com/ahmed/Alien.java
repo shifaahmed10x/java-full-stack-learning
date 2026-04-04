@@ -1,15 +1,21 @@
 package com.ahmed;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 
 import java.beans.ConstructorProperties;
 
+@Component
 public class Alien {
 
     private int age;
     private int roll;
 
     //Autowiring
+    @Autowired
+  // @Qualifier("comp1")
     private Computer com;
 
     // 🔹 Getter Methods
@@ -47,7 +53,7 @@ public class Alien {
 
     // Default constructor
     public Alien() {
-        System.out.println("Object created");
+        System.out.println("Alien Object created");
     }
 /*
     // Use when working with constructor injection in XML

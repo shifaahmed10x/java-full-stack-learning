@@ -1,5 +1,8 @@
 package com.ahmed;
 
+import org.springframework.stereotype.Component;
+
+@Component("comp1")
 public class Laptop implements Computer {
     int gen;
 
