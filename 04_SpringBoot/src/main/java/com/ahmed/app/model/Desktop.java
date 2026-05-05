@@ -1,4 +1,4 @@
-package com.ahmed.app;
+package com.ahmed.app.model;
 
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
